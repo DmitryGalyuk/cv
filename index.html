@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dmitry Galyuk -- CV</title>
+       <script src="svglib.js"></script>
+       <script>
+           var projectTypes = ['org', 'pm', 'prog'];
+           function showProjects(type) {
+               if(type && !projectTypes.includes(type)) return;
+               for( let a of document.getElementsByTagName('article') ) {
+                    a.style.display = !type || a.className==type ? 'block' : 'none';
+               }
+           }
+       </script>
+       <style>
+           :root {
+               --terminal-color: #33ff00;
+           }
+            body{
+                width: 21cm;
+                height: 29.7cm;
+                margin: 3em; 
+            } 
+             .projects article > .date, .role {
+                display: block;
+            }
+            .projects article > .date {
+                font-size:large;
+            }
+            .projects article > .title {
+                margin-left: 1em;
+            }
+            header ul {
+                padding-inline-start: 0em;
+            }
+            article .employer, article .title {
+                font-size: small
+            }
+            ul {
+                padding-inline-start: 1em;
+                margin: 0.5em;
+            }
+            ul ul {
+                padding-inline-start: 1em;
+                margin: 0.25em;
+                margin-top: 0em;
+            }
+            header li {
+                display: inline-block;
+                padding-right: 1em;
+            }
+            .moto {
+                font-size: large;
+                margin-top: 3em;
+                margin-bottom: 1em;
+                font-style: italic;
+            }
+            .projects article, header {
+                padding: 1em;
+                border-bottom: #eeeeee 1px solid;
+            }
+            svg {
+                height: 1em;
+                width: 1em;
+                padding-right: 0.5em;
+            }
+            @media print {
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+            @media (prefers-color-scheme: dark) {
+                html, html * {
+                    color: var(--terminal-color) !important;
+                    font-family: monospace;
+                    font-size: large;
+                    background-color: #292929 !important;
+                }
+                * {
+                    border-color: #555555
+                }
+                :link, :link * {
+                    color: #8db2e5 !important
+                }
+                input, textarea {
+                    background-color: #333333 !important
+                }
+                a {
+                    background-color: rgba(255, 255, 255, 0.01) !important
+                }
+                html, html::before, body, body::before, input, select, button {
+                    background-image: none !important
+                }
+                .projects article, header {
+                    padding: 1em;
+                    border-bottom: var(--terminal-color) 1px dashed;
+                }
+                svg {
+                    fill: var(--terminal-color);
+                }
+                h1 {
+                    font-size: xx-large;
+                }
+                h2 {
+                    font-size: x-large;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Dmitry Galyuk</h1>
+            <ul>
+                <li><svg src="icons/email.svg" /><a href="mailto:dmitry@galyuk.com">dmitry@galyuk.com</a></li>
+                <li><svg src="icons/phone.svg" />+995 55 823 13 89</li>
+                <li><svg src="icons/im.svg" />+375 29 629 28 17</li>
+                <li><svg src="icons/linkedin.svg" /><a href="https://www.linkedin.com/in/dmitry-galyuk-2645a08/">LinkedIn</a></li>
+                <li><svg src="icons/github.svg" /><a href="https://github.com/DmitryGalyuk">GitHub</a></li>
+                <li><svg src="icons/address.svg" />Georgia, Batumi</li>
+            </ul>
+            <span class="moto">Software Engineering Program Manager. Cross Platform. Cross Culture</span>
+        </header>
+        <main>
+            <section class="summary">
+                <ul>
+                    <li><a href="" onclick="showProjects('prog'); return false;">Software Engineer</a> since 1999</li>
+                    <li><a href="" onclick="showProjects('pm'); return false;">Project Manager</a> since 2006</li>
+                    <li><a href="" onclick="showProjects('org'); return false;">Organizational Manager</a> since 2012</li>
+                </ul>
+                <ul>
+                    <li>English: B2</li>
+                    <li>Russian, Belarusian: Native</li>
+                    <li>C#, JavaScript, Python, HTML/CSS, SQL</li>
+                </ul>
+            </section>
+            <section class="projects">
+                <h2>Project Summary</h2>
+                <article class="org">
+                    <span class="date"><time datetime="2021-12-01">December 2021</time> -- Till Now</span>
+                    <span class="role">Head of Delivery Operations, EPAM APAC</span>
+                    <span class="employer">EPAM Systems Georgia</span>
+                    <span class="title">Director, Software Engineering</span>
+                    <ul>
+                        <li>Setup and run the delivery operations in EPAM APAC region (CN, VN, SG, HK, JP, AU)</li>
+                        <li>Intake new business, run presales</li>
+                        <li>Assure green delivery</li>
+                        <li>Establish robust staffing process</li>    
+                    </ul>
+                </article>
+
+                <article class="prog">
+                    <span class="date"><time datetime="2022-01-01">January 2022</time> -- Till now</span>
+                    <span class="role">Author</span>
+                    <span class="employer"><a href="https://github.com/DmitryGalyuk/svglib.js">svglib.js</a></span>
+                    <span class="title"></span>
+                    <ul>
+                        <li>JavaScript library for embedding SVG file content to pages</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </article>
+
+                <article class="org">
+                    <span class="date"><time datetime="2021-01-01">January 2021</time> -- <time datetime="2021-12-01">December 2021</time></span>
+                    <span class="role">Partner for KZ/UZ/AM/GE delivery centers and APAC business</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Director, Software Engineering</span>
+                    <ul>
+                        <li>Launching new projects</li>
+                        <li>Presales support</li>
+                        <li>Agriculture offering creation</li>
+                    </ul>
+                </article>
+
+                <article class="org">
+                    <span class="date"><time datetime="2019-06-01">June 2019</time> -- <time datetime="2021-01-01">January 2021</time></span>
+                    <span class="role">Head of BY-IN integration program</span>
+                    <span class="employer">EPAM Systems India</span>
+                    <span class="title">Director, Software Engineering</span>
+                    <ul>
+                        <li>BY+IN value proposition created</li>
+                        <li>Presales</li>
+                        <li>Delivery Supervisor for major client in India (delivery, people)</li>
+                        <li>10+ new projects launched with USD 6M+ revenue in 2020</li>
+                        <li>Joint BY+IN OKRs for year 2020 were created and achived:</li>
+                        <ul>
+                            <li>finance -- 109%</li>
+                            <li>people -- 75%</li>
+                            <li>business development -- 57%</li>
+                        </ul>
+                        <li>Cross-culture onboarding program created and implemented for all new projects</li>
+                        <li>Shared cloud support service kicked off between IN-BY-MX</li>
+                        <li>EPAM Anywhere started in India</li>
+                    </ul>
+                </article>
+
+
+                <article class="org">
+                    <span class="date"><time datetime="2018-03-01">March, 2018</time> -- <time datetime="2019-05-01">May, 2019</time></span>
+                    <span class="role">EPAM India .NET Practice Head</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior Software Engineering Manager</span>
+                    <ul>
+                        <li>Effective hiring process established</li>
+                        <li>New projects landed in India</li>
+                        <li>New organisation structure applied</li>
+                    </ul>
+                </article>
+
+                <article class="prog">
+                    <span class="date"><time datetime="2017-01-01">2017</time> -- Till now</span>
+                    <span class="role">Author</span>
+                    <span class="employer"><a href="https://tz.galyuk.com">tz.galyuk.com</a></span>
+                    <span class="title"></span>
+                    <ul>
+                        <li>Tool to view and plan the activities in various time zones</li>
+                        <li>JavaScript, AngularJS 1.6, Node.js, GitHub Pages</li>
+                    </ul>
+                </article>
+
+                <article class="org">
+                    <span class="date"><time datetime="2016-06-01">June 2016</time> -- <time datetime="2019-05-01">May 2019</time></span>
+                    <span class="role">Resource Manager, Consultant</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior Software Engineering Manager</span>
+                    <ul>
+                        <li>Launch of .NET RPA subpractice</li>
+                        <li>Introduced the preparation and education plan for employes preparing for relocation</li>
+                        <li>Resource management for program members (PDP, staffing, any other issues)</li>
+                    </ul>
+                </article>
+
+
+                <article class="org">
+                    <span class="date"><time datetime="2014-06-01">June 2014</time> -- <time datetime="2017-12-01">December 2017</time></span>
+                    <span class="role">Technical Interview Service and Certification Program Lead</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior Software Engineering Manager</span>
+                    <ul>
+                        <li>Program consist of Technical Interview service and training and certification program.
+                        Service tracks interviewers, schedules the interviews, supports the interviewers trainings and certification.
+                        Training and Certification program is set of online and offline trainings for interviewers of any speciality and procedure of Certification.</li>
+                        <li>Introduced, developed and keep evangelizing the Technical Interview Service and Certification program.</li>
+                        <li>Designed and pitched the idea of the program.</li>
+                        <li>Designed the place of Interview Service and Certification programs within EPAM's enterprise architecture.</li>
+                        <li>Designed the rewarding and recognition system for interviewers.</li>
+                        <li>Performed team staffing within EPAM Service Desk.</li>
+                        <li>Designed the training online and offline programs.</li>
+                        <li>MOOC set up, recording.</li>
+                        <li>Conducting of f2f trainings for interviewers in different countries.</li>
+                    </ul>
+                </article>
+
+
+                <article class="pm">
+                    <span class="date"><time datetime="2012-06-01">June 2012</time> -- <time datetime="2014-06-01">June 2014</time></span>
+                    <span class="role">Product Owner, Project Manager of Staffing Radar. Staffing and bench management analytical tool.</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior / Software Engineering Manager</span>
+                    <ul>
+                        <li>Introduced first EPAM's staffing and bench management toolset.</li>
+                        <li>Full responsibility for the project from problem stating and pitchng to Sponsor to requirements clarification with stakeholders, team staffing, enterprise arhitecture, planning, release and global rollout.</li>
+                        <li>~5 developers, 2 testers</li>
+                        <li>Javascript, AngularJS, Scrum</li>
+                    </ul>
+                </article>
+
+
+                <article class="org">
+                    <span class="date"><time datetime="2012-06-01">June 2012</time> -- <time datetime="2014-06-01">June 2014</time></span>
+                    <span class="role">Staffing Coordinator, Hiring manager</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior / Software Engineering Manager</span>
+                    <ul>
+                        <li>Introduced, evangelized, created formal job description (including competencies and reliability level) and become first Staffing Coordinator in EPAM.</li>
+                        <li>Finding right people for projects. Choosing the right projects for engineers whose project ends.</li>
+                        <li>Interviewing and hiring the developers and managers. Engineers training and adaptation management.</li>
+                        <li>Planning, creating and integration of the staffing management toolset and process.</li>
+                        <li>Coaching BY regional offices to grow.</li>
+                        <li>500+ engineers and managers.</li>
+                    </ul>
+                </article>
+
+
+                <article class="pm">
+                    <span class="date"><time datetime="2007-11-01">Nov, 2007</time> -- <time datetime="2012-09-01">Sep, 2012</time></span>
+                    <span class="role">Project Manager</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior / Lead Software Engineer / Team Lead / Software Engineering Manager</span>
+                    <ul>
+                        <li><i>Client</i> focuses on connecting buyers and suppliers in the upstream, downstream and retail sectors, allowing them to do business with each other through a single, secure, independent channel. Therefore following applications are developed or supported: O2I -- Order to Invoice The O2I Product is a sophisticated buyer’s tool that effectively orchestrates full lifecycle of the TRIO-compliant documents’ flow unlike the existing TROM application developed by Commerce One. Our product is easily configurable, runs on pure TRIO, possesses user-friendly interface and is highly interactive after all. SSR -- Supplier Self Registration Registration forms for suppliers, Administration site for CCH sales, integration between SSR and other <i>Client</i>'s applications. HUB <i>Client</i>'s application for mapping business documents in different formats.</li>
+                        <li>Project management (up to 30 ppl), Resource management (up to 30 ppl)</li>
+                        <li>.NET, Java, SAP/ABAP</li>
+                        <li>Manual/Auto QA, Performance Analysis, Technical Writers, UI design</li>
+                        <li>ASP.NET; WinServices; Continuous Integration; XML; PDF, Excel generation; Excel parsing; J2EE; Hibernate; SAP SRM</li>
+                        <li>Visual studio 2005; Enterprise Architect; MS Project; CruiseControl.NET; NAnt ; Eclipse, Ant</li>
+                        <li>MS SQL Server, Postgree</li>
+                        <li>Elements of Scrum</li>    
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2006-10-01">October 2006</time> -- <time datetime="2007-11-01">November 2007</time></span>
+                    <span class="role">Key Developer, Project Coordinator</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior Software Engineer</span>
+                    <ul>
+                        <li>Project: SSR: Supplier Self Registration</li>
+                        <li>Registration forms for suppliers, Administration site for CCH sales, integration between SSR and Commerster</li>
+                        <li>Coordination, Requirements analysis, Development</li>
+                        <li>3 dev, 1 DB, 1 QA, 1 designer, 1 HTML coder</li>    
+                        <li>ASP.NET, XSLT, AJAX.NET</li>
+                        <li>Visual studio 2005, MS SQL Server 2000, ERWin, Enterprise Archtect, MS Project</li>
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2005-10-01">October 2005</time> -- <time datetime="2006-10-01">October 2006</time></span>
+                    <span class="role">Developer, Key Developer</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Senior / Software Engineer</span>
+                    <ul>
+                        <li>Project: Order 2 Invoice</li>
+                        <li>Development (bug fixing, requirement implementing). Build process activities.</li>
+                        <li>1 PM, 1 PC, 7 Dev, 3 Testers</li>
+                        <li>ASP.NET, Web Services</li>
+                        <li>Visual studio 2003/2005, MS SQL Server 2000, ERWin, Enterprise Archtect</li>
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2005-09-01">September 2005</time> -- <time datetime="2005-10-01">October 2005</time></span>
+                    <span class="role">Software Developer</span>
+                    <span class="employer">EPAM Systems Belarus</span>
+                    <span class="title">Software Developer</span>
+                    <ul>
+                        <li>Project for flight ticket company</li>
+                        <li>Site localization: replacing text and UI elements with data from resources and database; Creating multilingual resources;</li>
+                        <li>7 : 1 PM, 4Web Dev, 1 Backend Dev, 1 QA</li>
+                        <li>ASP.NET</li>
+                        <li>MS Visual Studio, SubVersion</li>    
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2004-01-01">January 2004</time> -- <time datetime="2005-07-01">July 2005</time></span>
+                    <span class="role">Programmer, System Administrator</span>
+                    <span class="employer">NIMIFLOWERS LLC</span>
+                    <span class="title"></span>
+                    <ul>
+                        <li>Project: online flowers shop for USA market</li>
+                        <ul>
+                            <li>UI programming: design, dialogs;</li>
+                            <li>Business logic: creating and implementing algorithms;</li>
+                            <li>DB design: modeling, implementation;</li>
+                            <li>Pages markup;</li>
+                            <li>Server administration;</li>
+                            <li>Installation and support;</li>
+                        </ul>
+                    <li>ASP.NET, GDI+, ODBC, MS SQL Server</li>
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2001-09-01">September 2001</time> -- <time datetime="2002-06-01">June 2002</time></span>
+                    <span class="role">Programmer</span>
+                    <span class="employer">College of Communications, Belarus</span>
+                    <span class="title"></span>
+                    <ul>
+                        <li>Project: Student practices management system</li>
+                        <ul><li>Requirements gathering.</li>
+                            <li>Database design: design and implementation</li>
+                            <li>Database api: design and implementation;</li>
+                            <li>GUI programming;</li>
+                            <li>Business logic programming;</li>
+                            <li>Project installation;</li>
+                        </ul>
+                        <li>2 developers</li>
+                        <li>C++, MFC, MS Access</li>
+                    </ul>
+                </article>
+
+
+                <article class="prog">
+                    <span class="date"><time datetime="2000-01-01">January 2000</time> -- <time datetime="2004-01-01">January 2004</time></span>
+                    <span class="role">Programmer, System Administrator</span>
+                    <span class="employer">NIMIFLOWERS LLC</span>
+                    <span class="title"></span>
+                    <ul>
+                        <li>Project: online flowers shop for USA market</li>
+                        <ul>
+                            <li>UI programming: design, dialogs;</li>
+                            <li>Business logic: creating and implementing algorithms;</li>
+                            <li>DB design: modeling, implementation;</li>
+                            <li>Pages markup;</li>
+                            <li>Server administration;</li>
+                            <li>Installation and support;</li>
+                        </ul>
+                        <li>ASP, MS Access</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>
