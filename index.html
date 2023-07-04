@@ -74,6 +74,9 @@
             display: inline-block;
             padding-right: 1em;
         }
+        header li svg, header li .contacttext {
+            vertical-align: middle;
+        }
         
         .moto {
             font-size: large;
@@ -153,13 +156,13 @@
 <body>
     <header>
         <h1>Dmitry Galyuk</h1>
-        <ul>
-            <li><svg src="icons/email.svg" /><a href="mailto:dmitry@galyuk.com">dmitry@galyuk.com</a></li>
-            <li><svg src="icons/phone.svg" />+995 55 823 13 89</li>
-            <li><svg src="icons/im.svg" />+375 29 629 28 17</li>
-            <li><svg src="icons/linkedin.svg" /><a href="https://www.linkedin.com/in/dmitry-galyuk" print="dmitry-galyuk" screen="LinkedIn">LinkedIn</a></li>
-            <li><svg src="icons/github.svg" /><a href="https://github.com/DmitryGalyuk" print="DmitryGalyuk" screen="GitHub">GitHub</a></li>
-            <li><svg src="icons/address.svg" />Georgia, Batumi</li>
+        <ul class="contacts">
+            <li><svg src="icons/email.svg" /><span class="contacttext"><a href="mailto:dmitry@galyuk.com">dmitry@galyuk.com</a></span></li>
+            <!-- <li><svg src="icons/im.svg" /><span class="contacttext">+375 29 629 28 17</span></li> -->
+            <li><svg src="icons/im.svg" /><svg src="icons/phone.svg" /><span class="contacttext">+995 55 823 13 89</span></li>
+            <li><svg src="icons/linkedin.svg" /><span class="contacttext"><a href="https://www.linkedin.com/in/dmitry-gal</span>yuk" print="dmitry-galyuk" screen="LinkedIn">LinkedIn</a></li>
+            <li><svg src="icons/github.svg" /><span class="contacttext"><a href="https://github.com/DmitryGal</span>yuk" print="DmitryGalyuk" screen="GitHub">GitHub</a></li>
+            <li><svg src="icons/address.svg" /><span class="contacttext">Georgia, Batumi</span></li>
         </ul>
         <span class="moto">Software Engineering Program Manager. Cross Platform. Cross Culture</span>
     </header>
