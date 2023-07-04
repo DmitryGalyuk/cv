@@ -13,6 +13,18 @@
                 a.style.display = !type || a.classList.contains(type) ? 'block' : 'none';
             }
         }
+
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            window.matchMedia('print').onchange = (e) => { 
+                let currentMedia = e.matches ? "print" : "screen";
+
+                let links = document.querySelectorAll(`a[${currentMedia}]`);
+                for (let link of links) {
+                    link.textContent = link.getAttribute(currentMedia);
+                }
+            }
+        });
     </script>
     <style>
          :root {
@@ -145,8 +157,8 @@
             <li><svg src="icons/email.svg" /><a href="mailto:dmitry@galyuk.com">dmitry@galyuk.com</a></li>
             <li><svg src="icons/phone.svg" />+995 55 823 13 89</li>
             <li><svg src="icons/im.svg" />+375 29 629 28 17</li>
-            <li><svg src="icons/linkedin.svg" /><a href="https://www.linkedin.com/in/dmitry-galyuk">LinkedIn</a></li>
-            <li><svg src="icons/github.svg" /><a href="https://github.com/DmitryGalyuk">GitHub</a></li>
+            <li><svg src="icons/linkedin.svg" /><a href="https://www.linkedin.com/in/dmitry-galyuk" print="dmitry-galyuk" screen="LinkedIn">LinkedIn</a></li>
+            <li><svg src="icons/github.svg" /><a href="https://github.com/DmitryGalyuk" print="DmitryGalyuk" screen="GitHub">GitHub</a></li>
             <li><svg src="icons/address.svg" />Georgia, Batumi</li>
         </ul>
         <span class="moto">Software Engineering Program Manager. Cross Platform. Cross Culture</span>
