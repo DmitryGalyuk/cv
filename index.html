@@ -4,153 +4,8 @@
 <head>
     <title>Dmitry Galyuk -- CV</title>
     <script src="svglib.js"></script>
-    <script>
-        var projectTypes = ['org', 'pm', 'prog', 'trainer'];
-
-        function showProjects(type) {
-            if (type && !projectTypes.includes(type)) return;
-            for (let a of document.getElementsByTagName('article')) {
-                a.style.display = !type || a.classList.contains(type) ? 'block' : 'none';
-            }
-        }
-
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            window.matchMedia('print').onchange = (e) => { 
-                let currentMedia = e.matches ? "print" : "screen";
-
-                let links = document.querySelectorAll(`a[${currentMedia}]`);
-                for (let link of links) {
-                    link.textContent = link.getAttribute(currentMedia);
-                }
-            }
-        });
-    </script>
-    <style>
-         :root {
-            --terminal-color: #33ff00;
-        }
-        
-        body {
-            width: 21cm;
-            height: 29.7cm;
-            margin: 3em;
-        }
-        
-        .projects article>.date,
-        .role {
-            display: block;
-        }
-        
-        .projects article>.date {
-            font-size: large;
-        }
-        
-        .projects article>.title {
-            margin-left: 1em;
-        }
-        
-        header ul {
-            padding-inline-start: 0em;
-        }
-        
-        article .employer,
-        article .title {
-            font-size: small
-        }
-        
-        ul {
-            padding-inline-start: 1em;
-            margin: 0.5em;
-        }
-        
-        ul ul {
-            padding-inline-start: 1em;
-            margin: 0.25em;
-            margin-top: 0em;
-        }
-        
-        header li {
-            display: inline-block;
-            padding-right: 1em;
-        }
-        header li svg, header li .contacttext {
-            vertical-align: middle;
-        }
-        
-        .moto {
-            font-size: large;
-            margin-top: 3em;
-            margin-bottom: 1em;
-            font-style: italic;
-        }
-        
-        .projects article,
-        header {
-            padding: 1em;
-            border-bottom: #eeeeee 1px solid;
-        }
-        
-        svg {
-            height: 1em;
-            width: 1em;
-            padding-right: 0.5em;
-        }
-        
-        @media print {
-            a {
-                text-decoration: none;
-                color: black;
-            }
-        }
-        
-        @media (prefers-color-scheme: dark) {
-            html,
-            html * {
-                color: var(--terminal-color) !important;
-                font-family: monospace;
-                font-size: large;
-                background-color: #292929 !important;
-            }
-            * {
-                border-color: #555555
-            }
-             :link,
-             :link * {
-                color: #8db2e5 !important
-            }
-            input,
-            textarea {
-                background-color: #333333 !important
-            }
-            a {
-                background-color: rgba(255, 255, 255, 0.01) !important
-            }
-            html,
-            html::before,
-            body,
-            body::before,
-            input,
-            select,
-            button {
-                background-image: none !important
-            }
-            .projects article,
-            header {
-                padding: 1em;
-                border-bottom: var(--terminal-color) 1px dashed;
-            }
-            svg {
-                fill: var(--terminal-color);
-            }
-            h1 {
-                font-size: xx-large;
-            }
-            h2 {
-                font-size: x-large;
-            }
-        }
-    </style>
+    <script src="scripts.js" ></script>
+    <link rel="stylesheet" href="styles.css" >
 </head>
 
 <body>
@@ -168,32 +23,38 @@
     </header>
     <main>
         <section class="summary">
-            <ul>
-                <li><a href="" onclick="showProjects('prog'); return false;">Software Engineer</a> since 1999</li>
-                <li><a href="" onclick="showProjects('pm'); return false;">Project Manager</a> since 2006</li>
-                <li><a href="" onclick="showProjects('org'); return false;">Organizational Manager</a> since 2012</li>
-                <li><a href="https://www.scrum.org/user/153542">Certified Scrum Master</a></li>
-                <li><a href="" onclick="showProjects('trainer'); return false;">Trainer</a></li>
-            </ul>
-            <ul>
-                <li>English: B2</li>
-                <li>Russian, Belarusian: Native</li>
-                <li>C#, JavaScript, Python, HTML/CSS, SQL</li>
-            </ul>
+            <h3>Skills summary</h3>
+            <article>
+                <ul>
+                    <li><a href="" onclick="showProjects('prog'); return false;">Software Engineer</a> since 1999</li>
+                    <li><a href="" onclick="showProjects('pm'); return false;">Project Manager</a> since 2006</li>
+                    <li><a href="" onclick="showProjects('org'); return false;">Organizational Manager</a> since 2012</li>
+                    <li><a href="https://www.scrum.org/user/153542">Certified Scrum Master</a></li>
+                    <li><a href="" onclick="showProjects('trainer'); return false;">Trainer</a></li>
+                </ul>
+                <ul>
+                    <li>Engineering Management</li>
+                    <li>Cultural Awareness</li>
+                    <li>Finding Right People</li>
+                    <li>Product Management</li>
+                    <li>Solution Architecture</li>
+                </ul>
+            </article>
         </section>
         <section class="projects">
-            <h2>Project Summary</h2>
+            <h2>Professional Experience</h2>
             <article class="org">
                 <span class="date"><time datetime="2021-12-01">December 2021</time> -- Till Now</span>
                 <span class="role">Director, Software Engineering</span>
                 <span class="employer">EPAM Systems APAC</span>
                 <!-- <span class="title">Head of Delivery Operations, EPAM APAC</span> -->
                 <ul>
-                    <li>Assure green delivery</li>
-                    <li>Intake new business, run presales</li>
-                    <li>Rollout the Engineering Excellence program in the region, focus on engineering processes quality</li>
-                    <li>Setup and run the delivery operations in EPAM APAC region (CN, VN, SG, HK, JP, AU, MY, TH)</li>
-                    <li>Establish robust staffing process</li>
+                    <li>Oversaw delivery across EPAM APAC's 8-country network.</li>
+                    <li>Fostered collaboration between Business and Delivery teams, integrating delivery into client proposals and regularly liaising with sales. Set up the transparent tracing between CRM opportunities, presales support activities and project staffing</li>
+                    <li>Improved project transparency by resolving grey projects, ensuring 95% had actial status. Set up a robust governance process for project issues.</li>
+                    <li>Mentored project managers on APAC cultural and organizational nuances for better cross-regional synergy.</li>
+                    <li>Led the APAC rollout of the EngX initiative directed a review of project engineering processes, resulting in risk assessments and improvement suggestions. Played a crucial role in client persuasion and regional expert certification.</li>
+                    
                     
                 </ul>
             </article>
@@ -202,29 +63,18 @@
                 <span class="date"><time datetime="2020-08-01">August 2020</time> -- Till Now</span>
                 <span class="role">Delivery Manager, Product Owner of EPAM's Relocator</span>
                 <span class="employer">EPAM Systems</span>
-                <span class="title">Director, Software Engineering</span>
+                <!-- <span class="title">Director, Software Engineering</span> -->
                 <ul>
-                    <li>Relocator application is EPAM's internal solution to help employees choose the country for next relocation</li>
-                    <li>Application aggregates the information about destinations from multiple external systems and allows to compare the countries and cities</li>
-                    <li>Connected to EPAM's backend systems to choose the locations with most openings</li>
-                    <li>Microsoft PowerApps, DataFlow, PowerBI</li>
-                    <li>Team of around 6 engineers</li>
+                    <li>Founded and developed Relocator, a web application that aids employees in choosing their next relocation destination</li>
+                    <li>Created a platform for the Relocation team to efficiently compile and manage relocation-specific documents.</li>
+                    <li>Guided product architecture, team coordination, and milestone achievement. Orchestrated and prioritized the product backlog, aligning with organizational and user objectives.</li>
+                    <li>Leveraged company and open-source data to present employees with comprehensive destination profiles.</li>
                 </ul>
             </article>
 
 
 
-            <article class="prog">
-                <span class="date"><time datetime="2023-06-13">June 2023</time> -- Till now</span>
-                <span class="role"><svg src="icons/dog.svg" />Pet project</span>
-                <span class="employer"><a href="https://coralometer.galyuk.com/?sample">Coralometer</a></span>
-                <span class="title"></span>
-                <ul>
-                    <li>Web application for MLM company Coral Club</li>
-                    <li>Visualise the organisation tree and the revenue flow within partner and client network</li>
-                    <li>JavaScript, MermaidJS, ExcelJS, Azure</li>
-                </ul>
-            </article>
+
 
             <!-- <article class="prog">
                 <span class="date"><time datetime="2022-01-01">January 2022</time> -- Till now</span>
@@ -237,42 +87,34 @@
                 </ul>
             </article> -->
 
-            <article class="org">
+            <!-- <article class="org">
                 <span class="date"><time datetime="2021-01-01">January 2021</time> -- <time datetime="2021-12-01">December 2021</time></span>
                 <span class="role">Business Partner for KZ/UZ/AM/GE delivery centers and APAC business</span>
                 <span class="employer">EPAM Systems Belarus</span>
                 <span class="title">Director, Software Engineering</span>
                 <ul>
-                    <!-- <li>Launching new projects</li> -->
                     <li>Agriculture offering creation</li>
                     <li>Presales support</li>
                 </ul>
-            </article>
+            </article> -->
 
             <article class="org">
                 <span class="date"><time datetime="2019-06-01">June 2019</time> -- <time datetime="2021-01-01">January 2021</time></span>
-                <span class="role">Head of BY-IN integration program</span>
+                <span class="role">Integration Lead for Belarus and India Delivery Centers</span>
                 <span class="employer">EPAM Systems India</span>
-                <span class="title">Director, Software Engineering</span>
+                <!-- <span class="title">Director, Software Engineering</span> -->
                 <ul>
-                    <li>BY+IN value proposition created</li>
-                    <li>Presales support</li>
-                    <li>Delivery Supervisor for major client in India (delivery, people)</li>
-                    <li>10+ new projects launched with USD 6M+ revenue in 2020</li>
-                    <li>Joint BY+IN OKRs for year 2020 were created and achieved:</li>
-                    <ul>
-                        <li>finance -- 109%</li>
-                        <li>people -- 75%</li>
-                        <li>business development -- 57%</li>
-                    </ul>
-                    <li>Cross-culture onboarding program created and implemented for all new projects</li>
-                    <li>Shared cloud support service kicked off between IN-BY-MX</li>
-                    <li>EPAM Anywhere started in India</li>
+                    <li>Enhance the appeal of EPAM's Indian delivery center for clients, who previously exhibited a preference for the slightly pricier Belarusian center. The goal was to start involving the Indian engineers into projects by means of mixed teams from Belarus and India.</li>
+                    <li>Developed a BY+IN Value Proposition to present a cohesive offer to potential clients. Played a key role in Presales Support, facilitating a seamless integration process.</li>
+                    <li>Acted as the Delivery Supervisor for a major client in India, overseeing both delivery and human resources aspects.</li>
+                    <li>Successfully launched 10+ projects, generating over USD 6M+ in revenue in COVID 2020 alone.</li>
+                    <li>Spearheaded the creation and achievement of Joint BY+IN OKRs for 2020: Finance: Achieved 109% of the set target. People: Attained 75% of the goal. Business Development: Realized 57% of the objective.</li>
+                    <li>Formulated and instituted a Cross-cultural Onboarding Program for all new projects, ensuring cultural alignment and facilitating smooth collaboration.</li>
                 </ul>
             </article>
 
 
-            <article class="org">
+            <!-- <article class="org">
                 <span class="date"><time datetime="2018-03-01">March, 2018</time> -- <time datetime="2019-05-01">May, 2019</time></span>
                 <span class="role">EPAM India .NET Practice Head</span>
                 <span class="employer">EPAM Systems Belarus</span>
@@ -282,28 +124,21 @@
                     <li>New projects landed in India</li>
                     <li>New organisation structure applied</li>
                 </ul>
-            </article>
+            </article> -->
 
-            <article class="prog">
-                <span class="date"><time datetime="2017-01-01">2017</time> -- Till now</span>
-                <span class="role"><svg src="icons/dog.svg" />Pet project</span>
-                <span class="employer"><a href="https://tz.galyuk.com">tz.galyuk.com</a></span>
-                <span class="title"></span>
-                <ul>
-                    <li>Tool to view and plan the activities in various time zones</li>
-                    <li>JavaScript, AngularJS 1.6, Node.js, GitHub Pages</li>
-                </ul>
-            </article>
+
 
             <article class="org">
-                <span class="date"><time datetime="2016-06-01">June 2016</time> -- <time datetime="2019-05-01">May 2019</time></span>
-                <span class="role">Resource Manager, Consultant</span>
+                <span class="date"><time datetime="2012-06-01">June 2012</time> -- <time datetime="2019-05-01">May 2019</time></span>
+                <span class="role">Senior Software Engineering Manager</span>
                 <span class="employer">EPAM Systems Belarus</span>
-                <span class="title">Senior Software Engineering Manager</span>
+                <!-- <span class="title">Senior Software Engineering Manager</span> -->
                 <ul>
-                    <li>Launch of .NET RPA subpractice</li>
+                    <li>Launch of .NET RPA subpractice focused on BluePrism and UiPath platforms</li>
                     <li>Introduced the preparation and education plan for employes preparing for relocation</li>
-                    <li>Resource management for program members (PDP, staffing, any other issues)</li>
+                    <li>Head the .NET practice of EPAM India. Set up the hiring process, kick off of the new projects.</li>
+                    <li>Introduced, evangelized, created formal job description (including competencies and reliability level) and become first Staffing Coordinator in EPAM.</li>
+
                 </ul>
             </article>
 
@@ -312,15 +147,10 @@
                 <span class="date"><time datetime="2014-06-01">June 2014</time> -- <time datetime="2017-12-01">December 2017</time></span>
                 <span class="role">Technical Interview Service and Certification Program Lead</span>
                 <span class="employer">EPAM Systems Belarus</span>
-                <span class="title">Senior Software Engineering Manager</span>
+                <!-- <span class="title">Senior Software Engineering Manager</span> -->
                 <ul>
-                    <li>Program consist of Technical Interview service and training and certification program. Service tracks interviewers, schedules the interviews, supports the interviewers trainings and certification. Training and Certification program
-                        is set of online and offline trainings for interviewers of any speciality and procedure of Certification.</li>
                     <li>Introduced, developed and keep evangelizing the Technical Interview Service and Certification program.</li>
-                    <li>Designed and pitched the idea of the program.</li>
-                    <li>Designed the place of Interview Service and Certification programs within EPAM's enterprise architecture.</li>
                     <li>Designed the rewarding and recognition system for interviewers.</li>
-                    <li>Performed team staffing within EPAM Service Desk.</li>
                     <li>Designed the training online and offline programs.</li>
                     <li>MOOC set up, recording.</li>
                     <li>Conducting of f2f trainings for interviewers in different countries. Over 9000 hours delivered, 3 years appreatiated among best trainers with average mark 4.5+</li>
@@ -332,17 +162,15 @@
                 <span class="date"><time datetime="2012-06-01">June 2012</time> -- <time datetime="2014-06-01">June 2014</time></span>
                 <span class="role">Product Owner, Project Manager of Staffing Radar. Staffing and bench management analytical tool.</span>
                 <span class="employer">EPAM Systems Belarus</span>
-                <span class="title">Senior / Software Engineering Manager</span>
+                <!-- <span class="title">Senior / Software Engineering Manager</span> -->
                 <ul>
                     <li>Introduced first EPAM's staffing and bench management toolset.</li>
                     <li>Full responsibility for the project from problem stating and pitchng to Sponsor to requirements clarification with stakeholders, team staffing, enterprise arhitecture, planning, release and global rollout.</li>
-                    <li>~5 developers, 2 testers</li>
-                    <li>Javascript, AngularJS, Scrum</li>
                 </ul>
             </article>
 
 
-            <article class="org">
+            <!-- <article class="org">
                 <span class="date"><time datetime="2012-06-01">June 2012</time> -- <time datetime="2014-06-01">June 2014</time></span>
                 <span class="role">Staffing Coordinator, Hiring manager</span>
                 <span class="employer">EPAM Systems Belarus</span>
@@ -355,11 +183,16 @@
                     <li>Coaching BY regional offices to grow.</li>
                     <li>500+ engineers and managers.</li>
                 </ul>
-            </article>
-
+            </article> -->
 
             <article class="pm">
-                <span class="date"><time datetime="2007-11-01">Nov, 2007</time> -- <time datetime="2012-09-01">Sep, 2012</time></span>
+                <span class="date"><time datetime="2005-09-01">September 2005</time> -- <time datetime="2012-09-01">September 2012</time></span>
+                <span class="role">Senior / Lead Software Engineer / Team Lead / Software Engineering Manager</span>
+                <span class="employer">EPAM Systems Belarus</span>
+            </article>
+
+            <!-- <article class="pm">
+                <span class="date"><time datetime="2007-10-01">Nov, 2007</time> -- <time datetime="2012-09-01">Sep, 2012</time></span>
                 <span class="role">Project Manager</span>
                 <span class="employer">EPAM Systems Belarus</span>
                 <span class="title">Senior / Lead Software Engineer / Team Lead / Software Engineering Manager</span>
@@ -376,7 +209,7 @@
                     <li>MS SQL Server, Postgree</li>
                     <li>Elements of Scrum</li>
                 </ul>
-            </article>
+            </article> 
 
 
             <article class="prog">
@@ -422,10 +255,9 @@
                     <li>ASP.NET</li>
                     <li>MS Visual Studio, SubVersion</li>
                 </ul>
-            </article>
+            </article> -->
 
-
-            <article class="prog">
+            <!-- <article class="prog">
                 <span class="date"><time datetime="2004-01-01">January 2004</time> -- <time datetime="2005-07-01">July 2005</time></span>
                 <span class="role">Programmer, System Administrator</span>
                 <span class="employer">NIMIFLOWERS LLC</span>
@@ -442,7 +274,7 @@
                     </ul>
                     <li>ASP.NET, GDI+, ODBC, MS SQL Server</li>
                 </ul>
-            </article>
+            </article> -->
 
 
             <article class="prog">
@@ -450,7 +282,7 @@
                 <span class="role">Programmer</span>
                 <span class="employer">College of Communications, Belarus</span>
                 <span class="title"></span>
-                <ul>
+                <!-- <ul>
                     <li>Project: Student practices management system</li>
                     <ul>
                         <li>Requirements gathering.</li>
@@ -462,16 +294,16 @@
                     </ul>
                     <li>2 developers</li>
                     <li>C++, MFC, MS Access</li>
-                </ul>
+                </ul> -->
             </article>
 
 
             <article class="prog">
-                <span class="date"><time datetime="2000-01-01">January 2000</time> -- <time datetime="2004-01-01">January 2004</time></span>
+                <span class="date"><time datetime="1999-11-01">November 1999</time> -- <time datetime="2005-01-01">July 2005</time></span>
                 <span class="role">Programmer, System Administrator</span>
                 <span class="employer">NIMIFLOWERS LLC</span>
                 <span class="title"></span>
-                <ul>
+                <!-- <ul>
                     <li>Project: online flowers shop for USA market</li>
                     <ul>
                         <li>UI programming: design, dialogs;</li>
@@ -482,8 +314,35 @@
                         <li>Installation and support;</li>
                     </ul>
                     <li>ASP, MS Access</li>
+                </ul> -->
+            </article>
+        </section>
+
+        <section>
+            <h3>Pet projects</h3>
+
+            <article class="prog">
+                <span class="role"><a href="https://coralometer.galyuk.com/?sample">Coralometer</a></span>
+                <ul>
+                    <li>Web application for MLM company Coral Club to visualise the organisation tree and the revenue flow within partner and client network</li>
+                    <li>JavaScript, MermaidJS, ExcelJS, Azure</li>
                 </ul>
             </article>
+
+            <article class="prog">
+                <span class="role"><a href="https://tz.galyuk.com">tz.galyuk.com</a></span>
+                <ul>
+                    <li>Tool to view and plan the activities in various time zones</li>
+                    <li>JavaScript, AngularJS 1.6, Node.js, GitHub Pages</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h3>Education</h3>
+            <p><a href="https://www.scrum.org/user/153542">Scrum.org PSM1: Certified Scrum Master</a></p>
+            <p>2001--2006: Belarusian State University of Informatics and Radioelectronics (BSUIR). Speciality: Automatic control of technical systems</p>
+
         </section>
     </main>
 </body>

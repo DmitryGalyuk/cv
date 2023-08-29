@@ -1,0 +1,128 @@
+:root {
+    --terminal-color: #33ff00;
+}
+
+body {
+    width: 21cm;
+    height: 29.7cm;
+    margin: 3em;
+}
+
+.summary article {
+    display: flex;
+    gap: 3em;
+}
+
+.projects article>.date,
+.role {
+    display: block;
+}
+
+.projects article>.date {
+    font-size: large;
+}
+
+.projects article>.title {
+    margin-left: 1em;
+}
+
+header ul {
+    padding-inline-start: 0em;
+}
+
+article .employer,
+article .title {
+    font-size: small
+}
+
+ul {
+    padding-inline-start: 1em;
+    margin: 0.5em;
+}
+
+ul ul {
+    padding-inline-start: 1em;
+    margin: 0.25em;
+    margin-top: 0em;
+}
+
+header li {
+    display: inline-block;
+    padding-right: 1em;
+}
+header li svg, header li .contacttext {
+    vertical-align: middle;
+}
+
+.moto {
+    font-size: large;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-style: italic;
+}
+
+.projects article,
+header {
+    padding: 1em;
+    /* border-bottom: #eeeeee 1px solid; */
+}
+
+svg {
+    height: 1em;
+    width: 1em;
+    padding-right: 0.5em;
+}
+
+@media print {
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html,
+    html * {
+        color: var(--terminal-color) !important;
+        font-family: monospace;
+        font-size: large;
+        background-color: #292929 !important;
+    }
+    * {
+        border-color: #555555
+    }
+     :link,
+     :link * {
+        color: #8db2e5 !important
+    }
+    input,
+    textarea {
+        background-color: #333333 !important
+    }
+    a {
+        background-color: rgba(255, 255, 255, 0.01) !important
+    }
+    html,
+    html::before,
+    body,
+    body::before,
+    input,
+    select,
+    button {
+        background-image: none !important
+    }
+    .projects article,
+    header {
+        padding: 1em;
+        border-bottom: var(--terminal-color) 1px dashed;
+    }
+    svg {
+        fill: var(--terminal-color);
+    }
+    h1 {
+        font-size: xx-large;
+    }
+    h2 {
+        font-size: x-large;
+    }
+}
