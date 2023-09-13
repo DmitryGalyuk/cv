@@ -50,7 +50,7 @@ header li {
     display: inline-block;
     padding-right: 1em;
 }
-header li svg, header li .contacttext {
+header li img, header li .contacttext {
     vertical-align: middle;
 }
 
@@ -67,7 +67,8 @@ header {
     /* border-bottom: #eeeeee 1px solid; */
 }
 
-svg {
+.svgIcon {
+    filter: grayscale(100%) brightness(0%);
     height: 1em;
     width: 1em;
     padding-right: 0.5em;
@@ -116,13 +117,14 @@ svg {
         padding: 1em;
         border-bottom: var(--terminal-color) 1px dashed;
     }
-    svg {
-        fill: var(--terminal-color);
-    }
     h1 {
         font-size: xx-large;
     }
     h2 {
         font-size: x-large;
+    }
+
+    .svgIcon {
+        filter: none;
     }
 }
