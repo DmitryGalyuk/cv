@@ -10,7 +10,7 @@ body {
 
 .summary article {
     display: flex;
-    gap: 3em;
+    gap: 1em;
 }
 
 .projects article>.date,
@@ -86,7 +86,7 @@ header {
     html * {
         color: var(--terminal-color) !important;
         font-family: monospace;
-        font-size: large;
+        /* font-size: large; */
         background-color: #292929 !important;
     }
     * {
