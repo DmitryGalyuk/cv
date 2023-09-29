@@ -74,6 +74,12 @@ header {
     padding-right: 0.5em;
 }
 
+footer {
+    font-size: small;
+    font-style: italic;
+    color: gray;
+}
+
 @media print {
     a {
         text-decoration: none;
