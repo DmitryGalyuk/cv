@@ -3,47 +3,82 @@
 }
 
 body {
+    margin: 1em;
+    margin-left: 3em;
     width: 21cm;
     height: 29.7cm;
-    margin: 3em;
 }
 
-.summary article {
-    display: flex;
-    gap: 1em;
+h1 {
+    padding-top: 1em;
+    margin: 0;
 }
 
-.projects article>.date,
-.role {
-    display: block;
-}
-
-.projects article>.date {
+.headline {
     font-size: large;
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-style: italic;
 }
+
+.about {
+    padding-left: 1em;
+}
+
+h2 {
+    margin: 0;
+    padding-top: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-column-gap: 0.5em;
+    /* row-gap: 0.25em; */
+    align-items: baseline;
+    padding: 1em;
+}
+
+.projects article>.company {
+    grid-row: 1;
+    grid-column: 1 / span 2;   
+    /* font-size: large; */
+}
+
 
 .projects article>.title {
-    margin-left: 1em;
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    /* font-size: large; */
+    font-weight: bold;
+    }
+    
+.projects article>.date {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: small;
+}
+
+.projects article>.location {
+    grid-row: 4;
+    grid-column: 1;
+    font-size: small;
+}
+
+.projects article>ul {
+    grid-row: 5;
+    grid-column: 1 / span 2;
+    margin: 0;
+    padding-top: 0.5em;
 }
 
 header ul {
     padding-inline-start: 0em;
 }
 
-article .employer,
-article .title {
-    font-size: small
-}
-
 ul {
     padding-inline-start: 1em;
     margin: 0.5em;
-}
-
-ul ul {
-    padding-inline-start: 1em;
-    margin: 0.25em;
-    margin-top: 0em;
 }
 
 header li {
@@ -54,18 +89,40 @@ header li img, header li .contacttext {
     vertical-align: middle;
 }
 
-.moto {
-    font-size: large;
-    margin-top: 3em;
-    margin-bottom: 1em;
-    font-style: italic;
+.education article {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-flow: dense;
+    padding-bottom: 1em;
+    column-gap: 1em;
 }
 
-.projects article,
-header {
-    padding: 1em;
-    /* border-bottom: #eeeeee 1px solid; */
+.education article .date {
+    grid-row: 4;
+    grid-column: 1;
 }
+
+.education article .location {
+    grid-row: 5;
+    grid-column: 1;
+}
+
+.education article .school {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.education article .degree {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.education article .major {
+    grid-row: 3;
+    grid-column: 1;
+    
+}
+
 
 .svgIcon {
     filter: grayscale(100%) brightness(0%);
@@ -75,6 +132,7 @@ header {
 }
 
 footer {
+    padding-top: 3em;
     font-size: small;
     font-style: italic;
     color: gray;
@@ -84,6 +142,10 @@ footer {
     a {
         text-decoration: none;
         color: black;
+    }
+    body {
+
+        margin: 3em;
     }
 }
 
