@@ -32,42 +32,49 @@ h2 {
 
 .projects article {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: auto auto 1fr;
     grid-column-gap: 0.5em;
-    /* row-gap: 0.25em; */
+    column-rule: solid 2px;
     align-items: baseline;
     padding: 1em;
 }
 
+
 .projects article>.company {
-    grid-row: 1;
-    grid-column: 1 / span 2;   
-    /* font-size: large; */
+    grid-row: 2;
+    grid-column: 1;
+    width: fit-content;   
+}
+
+.projects .company::after, 
+.projects .location::after {
+    content: "\00a0\00a0|";
 }
 
 
 .projects article>.title {
-    grid-row: 2;
-    grid-column: 1 / span 2;
-    /* font-size: large; */
+    grid-row: 1;
+    grid-column: 1 / -1;
     font-weight: bold;
-    }
+}
     
 .projects article>.date {
-    grid-row: 3;
-    grid-column: 1;
-    font-size: small;
+    grid-row: 2;
+    grid-column: 3 / -1;
+    /* font-size: small; */
+    width: 100%;
 }
 
 .projects article>.location {
-    grid-row: 4;
-    grid-column: 1;
-    font-size: small;
+    grid-row: 2;
+    grid-column: 2;
+    width: fit-content;
+    /* font-size: small; */
 }
 
 .projects article>ul {
-    grid-row: 5;
-    grid-column: 1 / span 2;
+    grid-row: 3;
+    grid-column: 1 / -1;
     margin: 0;
     padding-top: 0.5em;
 }
